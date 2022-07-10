@@ -116,7 +116,7 @@ function Blog() {
       });
   }, [isLoading]);
   const onClickHandle = () => {
-    setLoading(false);
+    window.location.reload();
   };
   if (isLoading)
     return (
