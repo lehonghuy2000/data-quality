@@ -117,12 +117,12 @@ const SubmitButton = styled.button`
 const Upload = () => {
   const [selectedFile, updatestate] = useState(null);
   const router = useRouter();
-  const onFileChange = (event) => {
+  const onFileChange = (event: any) => {
     updatestate(event.target.files[0]);
   };
   const onFileUpload = () => {
     const formData = new FormData();
-    formData.append("file", selectedFile);
+    formData.append("file", selectedFile as any);
     axios.post("https://data-quality-honor2018.azurewebsites.net", formData);
 
     router.push("/result");
