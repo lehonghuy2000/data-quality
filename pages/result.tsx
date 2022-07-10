@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import ClipLoader from "react-spinners/ClipLoader";
 import InnerHTML from "dangerously-set-html-content";
 import styled from "@emotion/styled";
 
@@ -8,13 +7,7 @@ const Spiner = styled.div`
   justify-content: center;
   padding-bottom: 10px;
 `;
-const Notification = styled.div`
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
-  min-height: 100vh;
-`;
+
 const ReloadButton = styled.button`
   align-items: center;
   appearance: none;
@@ -118,16 +111,6 @@ function Blog() {
   // const onClickHandle = () => {
   //   window.location.reload();
   // };
-  if (isLoading)
-    return (
-      <Notification>
-        <h1>In process, please reload </h1>
-        <Spiner>
-          <ClipLoader loading={isLoading} />
-        </Spiner>
-        {/* <ReloadButton onClick={onClickHandle}>Reload</ReloadButton> */}
-      </Notification>
-    );
 
   // return isLoading ? (
   //   <Spiner>

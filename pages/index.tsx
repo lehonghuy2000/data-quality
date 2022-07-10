@@ -1,5 +1,6 @@
 import { Button, TextField } from "@mui/material";
 import axios from "axios";
+import ClipLoader from "react-spinners/ClipLoader";
 import { useRouter } from "next/router";
 import styled from "@emotion/styled";
 
@@ -35,6 +36,18 @@ const InputFile = styled.div`
   align-items: center;
   justify-content: center;
   flex-grow: 1;
+`;
+const Notification = styled.div`
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+`;
+const Spiner = styled.div`
+  display: flex;
+  justify-content: center;
+  padding-bottom: 10px;
 `;
 const SubmitButton = styled.button`
   align-items: center;
@@ -116,6 +129,7 @@ const SubmitButton = styled.button`
 
 const Upload = () => {
   const [selectedFile, updatestate] = useState(null);
+  const [isLoading, setLoading] = useState(false);
   const router = useRouter();
   const onFileChange = (event: any) => {
     updatestate(event.target.files[0]);
@@ -127,7 +141,16 @@ const Upload = () => {
 
     router.push("/result");
   };
-
+  if (isLoading)
+    return (
+      <Notification>
+        <h1>In process, please reload </h1>
+        <Spiner>
+          <ClipLoader loading={isLoading} />
+        </Spiner>
+        {/* <ReloadButton onClick={onClickHandle}>Reload</ReloadButton> */}
+      </Notification>
+    );
   return (
     <Container>
       <Tittle>DATA QUALITY</Tittle>
