@@ -2,12 +2,6 @@ import { useEffect, useState } from "react";
 import InnerHTML from "dangerously-set-html-content";
 import styled from "@emotion/styled";
 
-const Spiner = styled.div`
-  display: flex;
-  justify-content: center;
-  padding-bottom: 10px;
-`;
-
 const ReloadButton = styled.button`
   align-items: center;
   appearance: none;

@@ -134,10 +134,14 @@ const Upload = () => {
   const onFileChange = (event: any) => {
     updatestate(event.target.files[0]);
   };
-  const onFileUpload = () => {
+  const onFileUpload = async () => {
+    setLoading(true);
     const formData = new FormData();
     formData.append("file", selectedFile as any);
-    axios.post("https://data-quality-honor2018.azurewebsites.net", formData);
+    await axios.post(
+      "https://data-quality-honor2018.azurewebsites.net",
+      formData
+    );
 
     router.push("/result");
   };
