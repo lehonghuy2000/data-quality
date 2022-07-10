@@ -115,9 +115,9 @@ function Blog() {
         setLoading(true);
       });
   }, [isLoading]);
-  const onClickHandle = () => {
-    window.location.reload();
-  };
+  // const onClickHandle = () => {
+  //   window.location.reload();
+  // };
   if (isLoading)
     return (
       <Notification>
@@ -125,7 +125,7 @@ function Blog() {
         <Spiner>
           <ClipLoader loading={isLoading} />
         </Spiner>
-        <ReloadButton onClick={onClickHandle}>Reload</ReloadButton>
+        {/* <ReloadButton onClick={onClickHandle}>Reload</ReloadButton> */}
       </Notification>
     );
 
