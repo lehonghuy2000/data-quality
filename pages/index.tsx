@@ -148,7 +148,7 @@ const Upload = () => {
   if (isLoading)
     return (
       <Notification>
-        <h1>In process, please reload </h1>
+        <h1>In process, please don't reload </h1>
         <Spiner>
           <ClipLoader loading={isLoading} />
         </Spiner>
